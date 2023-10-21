@@ -10,10 +10,16 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     int score = 0;
 
+    void Start()
+    {
+        gameOverPanel.SetActive(false);
+    }
+
+    
     public void GameOver()
     {
         Time.timeScale = 0;
-        scoreText.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(true);
         gameOverPanel.SetActive(true);
     }
 
@@ -22,4 +28,6 @@ public class GameController : MonoBehaviour
         score++;
         scoreText.text = score.ToString();
     }
+
+
 }

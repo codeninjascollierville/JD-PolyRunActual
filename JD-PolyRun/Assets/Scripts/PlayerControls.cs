@@ -65,13 +65,15 @@ public class PlayerControls : MonoBehaviour
 
     void GameOver()
     {
-        Time.timeScale = 0;
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Coin")
         {
+            GameObject.Find("GameController").GetComponent<GameController>().IncrementScore();
             Destroy(collision.gameObject);
         }
     }
