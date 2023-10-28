@@ -13,7 +13,12 @@ public class GameController : MonoBehaviour
     void Start()
     {
         gameOverPanel.SetActive(false);
+        Time.timeScale = 1;
     }
+
+
+    
+
 
     
     public void GameOver()
@@ -28,6 +33,5 @@ public class GameController : MonoBehaviour
         score++;
         scoreText.text = score.ToString();
     }
-
-
 }
+
